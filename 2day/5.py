@@ -11,7 +11,7 @@ class SmartPhone(Phone):
         super().__init__()
 
     def call(self):
-        print("SmartCalling...")
+        print("test")
 
 
 s1 = SmartPhone()
