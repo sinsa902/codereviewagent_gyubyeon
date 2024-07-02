@@ -8,6 +8,7 @@ class Sort(ABC):
         pass
 
 
+# test
 class SelectionSort(Sort):
     def do_srt(self, lst):
         pass
