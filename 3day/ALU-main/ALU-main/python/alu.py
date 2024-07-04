@@ -36,19 +36,20 @@ class ALU:
 
     def __is_valid1(self, r):
         if not self.opcode in ["ADD", "MUL", "SUB"]:
-            r.set_result(65535)
-            r.set_status(3)
+            self.__set_errorcode(3)
             return False
         return True
 
     def __is_valid2(self):
         if self.operand1 == -1:
-            r.set_result(65535)
-            r.set_status(1)
+            self.__set_errorcode(1)
             return False
 
         if self.operand2 == -1:
-            r.set_result(65535)
-            r.set_status(2)
+            self.__set_errorcode(2)
             return False
         return True
+
+    def __set_errorcode(self, error_code):
+        r.set_result(65535)
+        r.set_status(error_code)
